@@ -1,0 +1,21 @@
+{
+  "name": "automation_playwright",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bog777bog/automation_playwright.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bog777bog/automation_playwright/issues"
+  },
+  "homepage": "https://github.com/bog777bog/automation_playwright#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.30.0"
+  }
+}
