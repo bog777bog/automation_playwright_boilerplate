@@ -19,7 +19,7 @@ export class AccountPage {
   }
 
   async clickOnMenuItem(item: string) {
-    await this.burgerMenuBtn.click()
+    await this.burgerMenuBtn.click();
     switch(item) { 
       case 'Logout': { 
          await this.logooutBtn.click();
@@ -38,8 +38,8 @@ export class AccountPage {
         break; 
       } 
       default: { 
-         //statements; 
-         break; 
+        console.log('There is not such item to click');
+        break; 
       } 
    } 
   }
