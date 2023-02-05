@@ -1,8 +1,9 @@
 
 import { test, expect } from '@playwright/test';
-import { LoginPage } from './pages/login.page';
 import { loginData } from '../test_data/login.data';
 import { urlsData } from '../test_data/urls.data';
+import { LoginPage } from './pages/login.page';
+import { AccountPage } from './pages/account.page';
 
 
 test.beforeEach(async ({ page }, testInfo) => {
@@ -10,13 +11,17 @@ test.beforeEach(async ({ page }, testInfo) => {
     await page.goto(urlsData.baseUrl);
   });
 
-test('standart user is able to login', async ({ page }) => {
+test('standart user is able to login and logout', async ({ page }) => {
     const loginPage = new LoginPage(page);
+    const accountPage = new AccountPage(page);
 
     await loginPage.login(loginData.validUserEmail, loginData.password);
     await loginPage.checkLoginButtonIsNotVisible();
 
     await page.waitForURL(urlsData.plpUrl);
+
+    await accountPage.logOutFromAccount();
+    expect(await page.content()).toContain('Accepted usernames are');
 });
 
 test('problem user is able to login', async ({ page }) => {
@@ -41,5 +46,3 @@ test('it is not allowed to login with invalid creds', async ({ page }) => {
     await loginPage.login('invalid', 'invalid');
     expect(await loginPage.getErrorMessage()).toMatch(loginData.invalidCredsErrorMessage);
 });
-
-
