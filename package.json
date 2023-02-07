@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "allure-report": "allure generate allure-results -o allure-report --clean && allure open allure-report"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bog777bog/automation_playwright.git"
@@ -16,6 +18,8 @@
   },
   "homepage": "https://github.com/bog777bog/automation_playwright#readme",
   "devDependencies": {
-    "@playwright/test": "^1.30.0"
+    "@playwright/test": "^1.30.0",
+    "allure-commandline": "^2.20.1",
+    "allure-playwright": "^2.0.0-beta.26"
   }
 }
