@@ -1,4 +1,4 @@
-# automation_playwright
+# E2E tests
 
 ## Running all tests
 
