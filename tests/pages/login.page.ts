@@ -26,7 +26,6 @@ export class LoginPage {
   }
 
   async getErrorMessage(){
-    console.log('1h1ere1' + await this.errorText.textContent());
     return await this.errorText.textContent();
   }
 }

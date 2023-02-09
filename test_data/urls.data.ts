@@ -1,4 +1,6 @@
+import { baseUrl } from '../src/envs'
+
 export const urlsData = {
-    baseUrl: 'https://www.saucedemo.com',
-    plpUrl: `https://www.saucedemo.com/inventory.html`
+    baseUrl: baseUrl,
+    plpUrl: `${baseUrl}/inventory.html`
 };
