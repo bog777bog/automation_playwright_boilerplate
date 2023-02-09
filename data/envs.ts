@@ -5,9 +5,7 @@ const uatBaseUrl = `https://${process.env.ENV_USERNAME}:${process.env.ENV_PASSWO
 const prodBaseUrl = `https://${process.env.ENV_USERNAME}:${process.env.ENV_PASSWORD}@prod.saucedemo.com`
 
 let environmentType = process.env.ENVIRONMENT_TYPE;
-let baseUrl = '';
-
-console.log('lol0'+environmentType);  
+let baseUrl;
 
 if (environmentType == 'prod') {
   baseUrl == prodBaseUrl;

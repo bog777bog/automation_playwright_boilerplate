@@ -1,6 +1,6 @@
 
 import { test, expect } from '@playwright/test';
-import { loginData } from '../test_data/login.data';
+import { loginData } from '../data/users.data';
 import { urlsData } from '../test_data/urls.data';
 import { LoginPage } from './pages/login.page';
 import { AccountPage } from './pages/account.page';
