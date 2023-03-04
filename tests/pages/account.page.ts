@@ -7,7 +7,7 @@ export class AccountPage {
   readonly logooutBtn: Locator;
   readonly allItemsLink: Locator;
   readonly aboutLink: Locator;
-  readonly resetAppStateLink: Locator;
+  readonly resetAppStateLink: Locator; 
 
   constructor(page: Page) {
     this.page = page;
