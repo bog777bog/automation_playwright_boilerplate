@@ -1,4 +1,3 @@
-
 import { test, expect } from '@playwright/test';
 import { loginData } from '../data/users.data';
 import { urlsData } from '../data/urls.data';
