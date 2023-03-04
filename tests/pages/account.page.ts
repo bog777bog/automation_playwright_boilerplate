@@ -1,5 +1,5 @@
 import { expect, Locator, Page } from '@playwright/test';
-import { urlsData } from '../../test_data/urls.data'; 
+import { urlsData } from '../../data/urls.data'; 
 
 export class AccountPage {
   readonly page: Page;
@@ -46,6 +46,6 @@ export class AccountPage {
 
   async logOutFromAccount(){
     await this.clickOnMenuItem('Logout');
-    this.page.waitForURL(urlsData.baseUrl);
+    await this.page.waitForURL(urlsData.baseUrl);
   }
 }

@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "allure-report": "allure generate allure-results -o allure-report --clean && allure open allure-report"
+    "allure-report": "allure generate allure-results -o allure-report --clean && allure open allure-report",
+    "test": "npx playwright test"
   },
   "repository": {
     "type": "git",
