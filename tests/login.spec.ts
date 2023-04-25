@@ -12,7 +12,7 @@ test.describe('Login', () => {
         await page.goto(urlsData.baseUrl);
     });
 
-    test('standart user is able to login and logout', async ({ page }) => {
+    test('standart user is able to login with valid creds and logout', async ({ page }) => {
         await APP.loginPage.login(loginData.validUserEmail, loginData.password);
         await APP.loginPage.checkLoginButtonIsNotVisible();
 
@@ -35,5 +35,10 @@ test.describe('Login', () => {
     test('it is not allowed to login with invalid creds', async ({ page }) => {
         await APP.loginPage.login('invalid', 'invalid');
         expect(await APP.loginPage.getErrorMessage()).toMatch(loginData.invalidCredsErrorMessage);
+    });
+
+    test('it is not allowed to login with empty fields', async ({ page }) => {
+        await APP.loginPage.login('', '');
+        expect(await APP.loginPage.getErrorMessage()).toMatch(loginData.emptyCredsErrorMessage);
     });
 });
