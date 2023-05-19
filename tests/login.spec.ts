@@ -1,9 +1,10 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, Page } from '@playwright/test';
 import { loginData } from '../data/users.data';
 import { urlsData } from '../data/urls.data';
 import { Application } from './pages/application';
 
 let APP: Application;
+// example of page initialiser https://github.com/microsoft/playwright/issues/12176
 
 test.describe('Login', () => {
     test.beforeEach(async ({ page }, testInfo) => {
