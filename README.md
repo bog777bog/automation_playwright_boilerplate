@@ -32,3 +32,10 @@
 
 `npm run allure-report`
 
+## DOCKER build image
+
+docker build --platform linux/amd64 -t playwright-docker . 
+
+## DOCKER run container
+
+docker run -it playwright-docker:latest npm run test 
