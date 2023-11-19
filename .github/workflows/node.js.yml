@@ -30,11 +30,11 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
 
-    - name: Install Playwright
-      run: npx playwright install 
-
     - name: Install dependencies
       run: npm install
+
+    - name: Install Playwright
+      run: npx playwright install 
 
     - name: Run tests
       run: npm run test
