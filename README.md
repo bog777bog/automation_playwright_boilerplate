@@ -50,3 +50,7 @@ docker ps
 
 ## List of all containers (instances)
 docker ps -a
+
+## Docker Compose
+
+docker-compose up --scale regression-tests-app=3
