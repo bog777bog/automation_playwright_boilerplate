@@ -46,45 +46,51 @@ const config: PlaywrightTestConfig = {
 
   /* Configure projects for major browsers */
   projects: [
-    {
-      name: `Chrome`,
-      use: {
-        // Configure the browser to use.
-        browserName: `chromium`,
-
-        //Chrome Browser Config
-        channel: `chrome`,
-
-        //Browser Mode
-        headless: true,
-
-        //Browser height and width
-        viewport: { width: 1500, height: 730 },
-        ignoreHTTPSErrors: true,
-
-        //Enable File Downloads in Chrome
-        acceptDownloads: true,
-
-        //Artifacts
-        screenshot: `only-on-failure`,
-        video: `retain-on-failure`,
-        trace: `retain-on-failure`,
-
-        //Slows down execution by ms
-        launchOptions: {
-          slowMo: 0
-        }
-      },
-    },
 
     {
-      name: 'firefox',
-      use: {
-        //Browser Mode
-        headless: true,
-        ...devices['Desktop Firefox'],
-      },
+      name: 'chromium',
+      use: { ...devices['Desktop Chrome'] },
     },
+
+    // {
+    //   name: `Chrome`,
+    //   use: {
+    //     // Configure the browser to use.
+    //     browserName: `chromium`,
+
+    //     //Chrome Browser Config
+    //     channel: `chrome`,
+
+    //     //Browser Mode
+    //     headless: true,
+
+    //     //Browser height and width
+    //     viewport: { width: 1500, height: 730 },
+    //     ignoreHTTPSErrors: true,
+
+    //     //Enable File Downloads in Chrome
+    //     acceptDownloads: true,
+
+    //     //Artifacts
+    //     screenshot: `only-on-failure`,
+    //     video: `retain-on-failure`,
+    //     trace: `retain-on-failure`,
+
+    //     //Slows down execution by ms
+    //     launchOptions: {
+    //       slowMo: 0
+    //     }
+    //   },
+    // },
+
+    // {
+    //   name: 'firefox',
+    //   use: {
+    //     //Browser Mode
+    //     headless: true,
+    //     ...devices['Desktop Firefox'],
+    //   },
+    // },
 
     // {
     //   name: 'webkit',
