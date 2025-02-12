@@ -62,7 +62,7 @@ const config: PlaywrightTestConfig = {
         channel: `chrome`,
 
         //Browser Mode
-        headless: false,
+        headless: true,
 
         //Browser height and width
         viewport: { width: 1500, height: 730 },
