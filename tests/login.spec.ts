@@ -13,7 +13,7 @@ test.describe('Login', () => {
         await page.goto(urlsData.baseUrl);
     });
 
-    test('standart user is able to login with valid creds and logout', async ({ page }) => {
+    test.only('standart user is able to login with valid creds and logout', async ({ page }) => {
         await APP.loginPage.login(loginData.validUserEmail, loginData.password);
         await APP.loginPage.checkLoginButtonIsNotVisible();
 

@@ -24,6 +24,7 @@
     "allure-playwright": "^2.0.0-beta.26"
   },
   "dependencies": {
+    "@types/node": "^22.13.1",
     "dotenv": "^16.0.3"
   }
 }

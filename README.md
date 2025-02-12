@@ -6,7 +6,7 @@
 
 ## Running a single test file
 
-`npx playwright test landing-page.spec.ts`
+`npx playwright test login.spec.ts`
 
 ## Run a set of test files
 
