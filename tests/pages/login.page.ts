@@ -1,11 +1,11 @@
 import { expect, Locator, Page } from '@playwright/test';
 
 export class LoginPage {
-  readonly page: Page;
-  readonly usernameInput: Locator;
-  readonly passwordInput: Locator;
-  readonly loginBtn: Locator
-  readonly errorText: Locator
+  private readonly page: Page;
+  private readonly usernameInput: Locator;
+  private readonly passwordInput: Locator;
+  private readonly loginBtn: Locator
+  private readonly errorText: Locator
 
   constructor(page: Page) {
     this.page = page;
@@ -15,17 +15,17 @@ export class LoginPage {
     this.errorText = page.locator("[data-test = 'error']")
   }
 
-  async login(email, password) {
+  async login(email: string, password: string) {
     await this.usernameInput.type(email);
     await this.passwordInput.type(password);
     await this.loginBtn.click();
   }
 
-  async checkLoginButtonIsNotVisible(){
+  async checkLoginButtonIsNotVisible() {
     expect(await this.loginBtn).not.toBeVisible;
   }
 
-  async getErrorMessage(){
+  async getErrorMessage() {
     return await this.errorText.textContent();
   }
 }

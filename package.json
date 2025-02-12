@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "allure-report": "allure generate allure-results -o allure-report --clean && allure open allure-report",
+    "view-allure-report": "allure generate allure-results -o allure-report --clean && allure open allure-report",
     "test": "npx playwright test"
   },
   "repository": {
@@ -24,6 +24,7 @@
     "allure-playwright": "^2.0.0-beta.26"
   },
   "dependencies": {
+    "@types/node": "^22.13.1",
     "dotenv": "^16.0.3"
   }
 }

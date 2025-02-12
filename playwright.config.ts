@@ -46,6 +46,12 @@ const config: PlaywrightTestConfig = {
 
   /* Configure projects for major browsers */
   projects: [
+
+    // {
+    //   name: 'chromium',
+    //   use: { ...devices['Desktop Chrome'] },
+    // },
+
     {
       name: `Chrome`,
       use: {
@@ -67,8 +73,8 @@ const config: PlaywrightTestConfig = {
 
         //Artifacts
         screenshot: `only-on-failure`,
-        video: `retain-on-failure`,
-        trace: `retain-on-failure`,
+        // video: `retain-on-failure`,
+        // trace: `retain-on-failure`,
 
         //Slows down execution by ms
         launchOptions: {
@@ -80,6 +86,8 @@ const config: PlaywrightTestConfig = {
     // {
     //   name: 'firefox',
     //   use: {
+    //     //Browser Mode
+    //     headless: true,
     //     ...devices['Desktop Firefox'],
     //   },
     // },
@@ -121,7 +129,7 @@ const config: PlaywrightTestConfig = {
   ],
 
   /* Folder for test artifacts such as screenshots, videos, traces, etc. */
-  // outputDir: 'test-results/',
+  outputDir: 'test-results/',
 
   /* Run your local dev server before starting the tests */
   // webServer: {

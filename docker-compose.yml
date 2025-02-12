@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  regression-tests:
+    image: automated_tests
+    volumes:
+      - .:/automation_playwright
+    environment:
+      - NODE_ENV=production
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge

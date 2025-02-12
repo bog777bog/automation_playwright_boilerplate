@@ -18,7 +18,7 @@ export class AccountPage {
     this.resetAppStateLink = page.locator('#reset_sidebar_link');
   }
 
-  async clickOnMenuItem(item: string) {
+  async clickOnMenuItem(item: NavigationItem) {
     await this.burgerMenuBtn.click();
     switch(item) { 
       case 'Logout': { 
