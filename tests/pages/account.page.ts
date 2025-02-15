@@ -2,12 +2,12 @@ import { expect, Locator, Page } from '@playwright/test';
 import { urlsData } from '../../data/urls.data'; 
 
 export class AccountPage {
-  readonly page: Page;
-  readonly burgerMenuBtn: Locator;
-  readonly logooutBtn: Locator;
-  readonly allItemsLink: Locator;
-  readonly aboutLink: Locator;
-  readonly resetAppStateLink: Locator; 
+  private readonly page: Page;
+  private readonly burgerMenuBtn: Locator;
+  private readonly logooutBtn: Locator;
+  private readonly allItemsLink: Locator;
+  private readonly aboutLink: Locator;
+  private readonly resetAppStateLink: Locator; 
 
   constructor(page: Page) {
     this.page = page;
