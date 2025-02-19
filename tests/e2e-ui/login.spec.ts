@@ -14,13 +14,12 @@ test.describe('Login', () => {
         await page.goto(urlsData.baseUrl);
     });
 
-    test.only('standart user is able to login with valid creds and logout', async ({ page }) => {
+    test('standart user is able to login with valid creds and logout', async ({ page }) => {
         await APP.loginPage.login(loginData.validUserEmail, loginData.password);
         await APP.loginPage.checkLoginButtonIsNotVisible();
 
         await page.waitForURL(urlsData.plpUrl);
 
-        await APP.accountPage.logOutFromAccount();
         await APP.accountPage.logOutFromAccount();
         expect(await page.content()).toContain('Accepted usernames are');
     });
