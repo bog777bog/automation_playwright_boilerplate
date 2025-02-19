@@ -1,5 +1,5 @@
-import { AccountPage }from '../pages/account.page';
-import { LoginPage } from '../pages/login.page';
+import { AccountPage }from '../tests/pages/account.page';
+import { LoginPage } from '../tests/pages/login.page';
 import { test as base } from './fixturesBase';
 import { Page } from '@playwright/test';
 

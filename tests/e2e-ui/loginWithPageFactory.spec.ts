@@ -1,5 +1,5 @@
 import { Data } from '../../data/users.data';
-import { test } from '../fixtures/fixturePages';
+import { test } from '@playwright/test';
 import { expect } from '@playwright/test';
 import { urlsData } from '../../data/urls.data';
 import { Application } from '../pages/application';

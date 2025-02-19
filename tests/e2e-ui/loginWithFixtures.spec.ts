@@ -1,5 +1,5 @@
 import { Data } from '../../data/users.data';
-import { test } from '../fixtures/fixturePages';
+import { test } from '../../fixtures/fixturePages';
 import { expect } from '@playwright/test';
 import { urlsData } from '../../data/urls.data';
 import { Application } from '../pages/application';
@@ -19,7 +19,7 @@ test.describe('Login', () => {
     test('standart user is able to login with valid creds and logout', async ({
         page,
         loginPage,
-        accountPage 
+        accountPage
     }) => {
         await loginPage.login(loginData.validUserEmail, loginData.password);
         await loginPage.checkLoginButtonIsNotVisible();
