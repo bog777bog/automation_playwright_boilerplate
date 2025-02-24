@@ -65,7 +65,7 @@ const config: PlaywrightTestConfig = {
         headless: true,
 
         //Browser height and width
-        viewport: { width: 1500, height: 730 },
+        viewport: { width: 1920, height: 1080 },
         ignoreHTTPSErrors: true,
 
         //Enable File Downloads in Chrome
@@ -74,7 +74,7 @@ const config: PlaywrightTestConfig = {
         //Artifacts
         screenshot: `only-on-failure`,
         // video: `retain-on-failure`,
-        // trace: `retain-on-failure`,
+        trace: `retain-on-failure`,
 
         //Slows down execution by ms
         launchOptions: {

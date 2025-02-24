@@ -16,5 +16,4 @@ export class PageFactory {
  getLoginPage() {
     return new LoginPage(this.page);
  }
-
 };
