@@ -11,7 +11,6 @@ test.describe.configure({ mode: 'serial' });
 
 test.describe('Login', () => {
     test.beforeEach(async ({ page }, testInfo) => {
-        // APP = new Application(page);
         console.log(`Running ${testInfo.title}`);
         await page.goto(urlsData.baseUrl);
     });
@@ -37,16 +36,60 @@ test.describe('Login', () => {
     });
 
 
-    authenticated('user logs out form My Account', async ({ authenticatedPage }) => {
+    authenticated('user logs out form My Account', async ({page, authenticatedPage }) => {
         await test.step('Logging out from My Account', async () => {
             await authenticatedPage.logOutFromAccount();
+            expect(await page.content()).toContain('Accepted usernames are');
         });
     });
 
-    test.only('problem user is able to login', async ({ page, APP }) => {
-        await APP.loginPage.login(userData.problemUser.email, userData.problemUser.password);
-        await page.waitForURL(urlsData.plpUrl);
-        await APP.accountPage.logOutFromAccount();
-        expect(await page.content()).toContain('Accepted usernames are');
+    test('problem user is able to login', async ({ page, APP }) => {
+        await test.step('Logging in as a problem user', async () => {
+            await APP.loginPage.login(userData.problemUser.email, userData.problemUser.password);
+        });
+        await test.step('Verify that the problem user is logged in', async () => {
+          await page.waitForURL(urlsData.plpUrl);
+        });
+        await test.step('Logout from Account', async () => {
+            await APP.accountPage.logOutFromAccount();
+        });
+        await test.step('Verify that the problem user is logged out', async () => {
+            expect.soft(await page.content()).toContain('WRONG TEXT');
+            expect(await page.content()).toContain('Accepted usernames are');
+        });
     });
+
+    test.skip('problem user is not able to login', async ({ page, APP }) => {
+        await test.step('Logging in as a problem user', async () => {
+            await APP.loginPage.login(userData.problemUser.email, userData.problemUser.password);
+        });
+        await test.step('Verify that the problem user is logged in', async () => {
+          await page.waitForURL(urlsData.plpUrl);
+        });
+        await test.step('Logout from Account', async () => {
+            await APP.accountPage.logOutFromAccount();
+        });
+        await test.step('Verify that the problem user is logged out', async () => {
+            expect.soft(await page.content()).toContain('WRONG TEXT');
+            expect(await page.content()).toContain('Accepted usernames are');
+        });
+    });
+
+
+    test.only('incomplete test scenario - missing development', {
+        annotation: {
+            type: 'issue',
+            description: 'https://github.com/microsoft/demo.playwright.dev/issues/58',
+          },
+    },
+     async ({ page, APP }) => {
+        await test.step('Logging in as a problem user', async () => {
+            await APP.loginPage.login(userData.problemUser.email, userData.problemUser.password);
+        });
+        await test.step('Verify that the problem user is logged in', async () => {
+            expect.soft(await page.content()).toContain('WRONG TEXT');
+          await page.waitForURL(urlsData.plpUrl);
+        });
+    });
+
 });
