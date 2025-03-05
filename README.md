@@ -38,17 +38,20 @@ docker build -t automated_tests -f dockerfile .
 
 ## DOCKER run container
 
-docker run -it automated_tests:latest npm run test 
+docker run -it automated_tests:latest npm run test
 
 docker exec -it automated_tests /bin/bash
 
 ## List of docker images
+
 docker images
 
 ## List of running containers (instances)
+
 docker ps
 
 ## List of all containers (instances)
+
 docker ps -a
 
 ## Docker Compose

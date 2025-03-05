@@ -1,10 +1,10 @@
-import { Application, AccountPage, LoginPage }from '@pages/index';
+import { Application, AccountPage, LoginPage } from '@pages/index';
 import { test as base } from './fixturesBase';
 
 type Pages = {
-  loginPage: LoginPage,
-  accountPage: AccountPage
-  APP: Application
+  loginPage: LoginPage;
+  accountPage: AccountPage;
+  APP: Application;
 };
 
 export const test = base.extend<Pages>({
@@ -17,7 +17,7 @@ export const test = base.extend<Pages>({
     await use(accountPage);
   },
   APP: async ({ page }, use) => {
-   const APP = new Application(page);
-   await use(APP);
-  }
+    const APP = new Application(page);
+    await use(APP);
+  },
 });

@@ -7,19 +7,25 @@ import { Application } from '@pages/application';
 let APP: Application;
 
 test.describe('Login and My Account pages', () => {
-    test.beforeEach(async ({ page }, testInfo) => {
-        APP = new Application(page);
-        console.log(`Running ${testInfo.title}`);
-        await page.goto(urlsData.baseUrl);
-    });
+  test.beforeEach(async ({ page }, testInfo) => {
+    APP = new Application(page);
+    console.log(`Running ${testInfo.title}`);
+    await page.goto(urlsData.baseUrl);
+  });
 
-    test('Verifies login and My Account pages', { tag: '@visual' }, async ({ page }) => {
-        await expect(page).toHaveScreenshot('login.png', { maxDiffPixels: 50 });
+  test(
+    'Verifies login and My Account pages',
+    { tag: '@visual' },
+    async ({ page }) => {
+      await expect(page).toHaveScreenshot('login.png', { maxDiffPixels: 50 });
 
-        await APP.loginPage.login(loginData.validUserEmail, loginData.password);
-        await APP.loginPage.checkLoginButtonIsNotVisible();
+      await APP.loginPage.login(loginData.validUserEmail, loginData.password);
+      await APP.loginPage.checkLoginButtonIsNotVisible();
 
-        await page.waitForURL(urlsData.plpUrl);
-        await expect(page).toHaveScreenshot('dashboard.png', { maxDiffPixels: 50 });
-    });
+      await page.waitForURL(urlsData.plpUrl);
+      await expect(page).toHaveScreenshot('dashboard.png', {
+        maxDiffPixels: 50,
+      });
+    },
+  );
 });
