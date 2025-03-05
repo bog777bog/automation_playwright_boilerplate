@@ -1,10 +1,10 @@
-import { Data } from '../../data/users.data';
+import { Data } from '@data/users.data';
 import { test } from '../../fixtures/fixturePages';
 import { expect } from '@playwright/test';
-import { urlsData } from '../../data/urls.data';
-import { Application } from '../pages/application';
-import { userData } from '../../data/login.data';
-import { authenticated } from '../../fixtures/fixtures';
+import { urlsData } from '@data/urls.data';
+import { Application } from '@pages/index';
+import { userData } from '@data/login.data';
+import { authenticated } from '@fixtures/fixtures';
 
 // example of page initialiser https://github.com/microsoft/playwright/issues/12176
 test.describe.configure({ mode: 'serial' });
@@ -16,10 +16,7 @@ test.describe('Login', () => {
     });
 
     [
-    'validUser',
-    'problemUser',
-    'lockedUser'
-    ].forEach(userType => {
+    'validUser', 'problemUser', 'lockedUser'].forEach(userType => {
         test(`${userType} user is able to login with valid creds and logout`, async ({
             page,
             loginPage,

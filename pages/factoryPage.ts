@@ -1,6 +1,5 @@
 import { Page } from '@playwright/test';
-import { AccountPage } from './account.page';
-import { LoginPage } from './login.page';
+import { AccountPage, LoginPage } from '@pages/index'
 
 export class PageFactory {
  private page: Page;

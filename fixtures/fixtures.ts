@@ -1,7 +1,6 @@
-import { LoginPage } from '../tests/pages/login.page';
+import { LoginPage, AccountPage  } from '@pages/index';
 import { ConsoleMessage, Page, test as base } from "@playwright/test";
-import { userData } from '../data/login.data';
-import { AccountPage } from '../tests/pages/account.page';
+import { userData } from '@data/login.data';
 
 export const authenticated = base.extend({
     authenticatedPage: async ({ page }, use) => {

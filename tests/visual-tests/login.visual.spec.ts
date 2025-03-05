@@ -1,7 +1,7 @@
 import { test, expect, Page } from '@playwright/test';
-import { loginData } from '../../data/users.data';
-import { urlsData } from '../../data/urls.data';
-import { Application } from '../pages/application';
+import { loginData } from '@data/users.data';
+import { urlsData } from '@data/urls.data';
+import { Application } from '@pages/application';
 
 // example of page initialiser https://github.com/microsoft/playwright/issues/12176
 let APP: Application;
@@ -13,7 +13,7 @@ test.describe('Login and My Account pages', () => {
         await page.goto(urlsData.baseUrl);
     });
 
-    test('Verifies login and My Account pages', async ({ page }) => {
+    test('Verifies login and My Account pages', { tag: '@visual' }, async ({ page }) => {
         await expect(page).toHaveScreenshot('login.png', { maxDiffPixels: 50 });
 
         await APP.loginPage.login(loginData.validUserEmail, loginData.password);

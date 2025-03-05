@@ -1,10 +1,10 @@
-import { Data } from '../../data/users.data';
+import { Data } from '@data/users.data';
 import { test } from '@playwright/test';
 import { expect } from '@playwright/test';
-import { urlsData } from '../../data/urls.data';
-import { Application } from '../pages/application';
-import { loginData } from '../../data/users.data';
-import { PageFactory } from '../pages/factoryPage';
+import { urlsData } from '@data/urls.data';
+import { Application } from '@pages/application';
+import { loginData } from '@data/users.data';
+import { PageFactory } from '@pages/factoryPage';
 
 
 // example of page initialiser https://github.com/microsoft/playwright/issues/12176

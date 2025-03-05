@@ -1,8 +1,5 @@
-import { AccountPage }from '../tests/pages/account.page';
-import { LoginPage } from '../tests/pages/login.page';
+import { Application, AccountPage, LoginPage }from '@pages/index';
 import { test as base } from './fixturesBase';
-import { Application } from '../tests/pages/application';
-import { Page } from '@playwright/test';
 
 type Pages = {
   loginPage: LoginPage,
@@ -11,15 +8,15 @@ type Pages = {
 };
 
 export const test = base.extend<Pages>({
-  loginPage: async ({page}, use) => {
+  loginPage: async ({ page }, use) => {
     const loginPage = new LoginPage(page);
     await use(loginPage);
   },
-  accountPage: async ({page}, use) => {
+  accountPage: async ({ page }, use) => {
     const accountPage = new AccountPage(page);
     await use(accountPage);
   },
-  APP: async ({page}, use) => {
+  APP: async ({ page }, use) => {
    const APP = new Application(page);
    await use(APP);
   }

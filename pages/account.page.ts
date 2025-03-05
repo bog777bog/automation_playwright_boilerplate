@@ -1,5 +1,5 @@
 import { expect, Locator, Page } from '@playwright/test';
-import { urlsData } from '../../data/urls.data'; 
+import { urlsData } from '@data/urls.data'; 
 
 export class AccountPage {
   private readonly page: Page;
