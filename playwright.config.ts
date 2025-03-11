@@ -19,7 +19,7 @@ const config: PlaywrightTestConfig = {
      * Maximum time expect() should wait for the condition to be met.
      * For example in `await expect(locator).toHaveText();`
      */
-    timeout: 5000
+    timeout: 5000,
   },
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -30,8 +30,8 @@ const config: PlaywrightTestConfig = {
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  
-  reporter: [['html'], ["line"], ["allure-playwright"]],
+
+  reporter: [['html'], ['line'], ['allure-playwright']],
 
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
@@ -46,7 +46,6 @@ const config: PlaywrightTestConfig = {
 
   /* Configure projects for major browsers */
   projects: [
-
     // {
     //   name: 'chromium',
     //   use: { ...devices['Desktop Chrome'] },
@@ -65,7 +64,7 @@ const config: PlaywrightTestConfig = {
         headless: true,
 
         //Browser height and width
-        viewport: { width: 1500, height: 730 },
+        viewport: { width: 1920, height: 1080 },
         ignoreHTTPSErrors: true,
 
         //Enable File Downloads in Chrome
@@ -74,12 +73,12 @@ const config: PlaywrightTestConfig = {
         //Artifacts
         screenshot: `only-on-failure`,
         // video: `retain-on-failure`,
-        // trace: `retain-on-failure`,
+        trace: `retain-on-failure`,
 
         //Slows down execution by ms
         launchOptions: {
-          slowMo: 0
-        }
+          slowMo: 0,
+        },
       },
     },
 

@@ -1,6 +1,6 @@
-import { baseUrl } from './envs'
+import { baseUrl } from './envs';
 
 export const urlsData = {
-    baseUrl: baseUrl,
-    plpUrl: `${baseUrl}/inventory.html`
+  baseUrl: baseUrl,
+  plpUrl: `${baseUrl}/inventory.html`,
 };

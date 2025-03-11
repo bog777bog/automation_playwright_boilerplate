@@ -1,6 +1,5 @@
 import { Page } from '@playwright/test';
-import { LoginPage } from './login.page';
-import { AccountPage } from './account.page';
+import { AccountPage, LoginPage } from '@pages/index';
 
 export class Application {
   public accountPage: AccountPage;
