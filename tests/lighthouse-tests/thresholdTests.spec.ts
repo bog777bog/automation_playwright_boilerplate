@@ -1,20 +1,15 @@
 import { test, expect, Page } from '@playwright/test';
-import { loginData } from '@data/users.data';
-import { urlsData } from '@data/urls.data';
-import { Application } from '@pages/application';
 import { playAudit } from 'playwright-lighthouse'
 import playwright from 'playwright';
-
-test.describe.configure({ mode: 'serial' });
 
 test.describe('Lighthouse Threshold Tests', () => {
   ['https://www.avis.com.ua/',
    'https://www.avis.com.ua/offers/Ukraine-offers/',
    'https://www.avis.com.ua/our-fleet/core/']
-   .forEach((pageName) => {
+   .forEach((pageName, index) => {
       test(`Verifies SEO and Accessibility scores for ${pageName} page`, { tag: '@thresholdTests' }, async ({ }) => {
         const browser = await playwright['chromium'].launch({
-          args: ['--remote-debugging-port=9222'],
+          args: [`--remote-debugging-port=${9222 + index}`],
         });
         const page = await browser.newPage();
         await page.goto(pageName);
@@ -28,7 +23,7 @@ test.describe('Lighthouse Threshold Tests', () => {
             seo: 92,
             pwa: 50,
           },
-          port: 9222,
+          port: 9222 + index,
 
           reports: {
             formats: {
